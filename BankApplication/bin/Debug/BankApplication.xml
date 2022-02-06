@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BankApplication</name>
+    </assembly>
+    <members>
+        <member name="T:BankApplication.Account">
+            <summary>
+            .
+            </summary>
+        </member>
+        <member name="P:BankApplication.Account.Balance">
+            <summary>
+            .
+            </summary>
+        </member>
+        <member name="M:BankApplication.Account.#ctor">
+            <summary>
+            .
+            </summary>
+        </member>
+        <member name="M:BankApplication.Account.#ctor(System.Decimal)">
+            <summary>
+            .
+            </summary>
+            <param name="balance"></param>
+        </member>
+        <member name="M:BankApplication.Account.Credit(System.Decimal)">
+            <summary>
+            .
+            </summary>
+            <param name="amount"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BankApplication.Account.Debit(System.Decimal)">
+            <summary>
+            .
+            </summary>
+            <param name="amount"></param>
+        </member>
+        <member name="T:BankApplication.CheckingAccount">
+            <summary>
+            .
+            </summary>
+        </member>
+        <member name="P:BankApplication.CheckingAccount.ChargedFee">
+            <summary>
+            .
+            </summary>
+        </member>
+        <member name="M:BankApplication.CheckingAccount.#ctor">
+            <summary>
+            .
+            </summary>
+        </member>
+        <member name="M:BankApplication.CheckingAccount.#ctor(System.Decimal,System.Decimal)">
+            <summary>
+            .
+            </summary>
+            <param name="balance"></param>
+            <param name="fee"></param>
+        </member>
+        <member name="M:BankApplication.CheckingAccount.Credit(System.Decimal)">
+            <summary>
+            .
+            </summary>
+            <param name="amount"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BankApplication.CheckingAccount.Debit(System.Decimal)">
+            <summary>
+            .
+            </summary>
+            <param name="amount"></param>
+            <returns></returns>
+        </member>
+        <member name="T:BankApplication.Program">
+            <summary>
+            .
+            </summary>
+            <Student>Jonathan Woods</Student>
+            <Class>CIS297</Class>
+            <Semester>Winter 2022</Semester>
+        </member>
+        <member name="M:BankApplication.Program.Main(System.String[])">
+            <summary>
+            .
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:BankApplication.Program.UpdateAccount(BankApplication.Account,System.Int32,System.String)">
+            <summary>
+            .
+            </summary>
+            <param name="account"></param>
+            <param name="accountNumber"></param>
+            <param name="accountType"></param>
+        </member>
+        <member name="T:BankApplication.SavingsAccount">
+            <summary>
+            .
+            </summary>
+        </member>
+        <member name="P:BankApplication.SavingsAccount.InterestRate">
+            <summary>
+            .
+            </summary>
+        </member>
+        <member name="M:BankApplication.SavingsAccount.#ctor">
+            <summary>
+            .
+            </summary>
+        </member>
+        <member name="M:BankApplication.SavingsAccount.#ctor(System.Decimal,System.Decimal)">
+            <summary>
+            .
+            </summary>
+        </member>
+        <member name="M:BankApplication.SavingsAccount.CalculateInterest">
+            <summary>
+            .
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
