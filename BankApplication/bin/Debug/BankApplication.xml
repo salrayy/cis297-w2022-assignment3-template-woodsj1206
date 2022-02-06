@@ -6,77 +6,78 @@
     <members>
         <member name="T:BankApplication.Account">
             <summary>
-            .
+            Represents a users bank account.
             </summary>
         </member>
         <member name="P:BankApplication.Account.Balance">
             <summary>
-            .
+            Property for getting and setting the Account Balance.
             </summary>
         </member>
         <member name="M:BankApplication.Account.#ctor">
             <summary>
-            .
+            Default constructor.
             </summary>
         </member>
         <member name="M:BankApplication.Account.#ctor(System.Decimal)">
             <summary>
-            .
+            Constructor that sets the account balance.
             </summary>
             <param name="balance"></param>
         </member>
         <member name="M:BankApplication.Account.Credit(System.Decimal)">
             <summary>
-            .
+            Deposits money into the account.
             </summary>
             <param name="amount"></param>
-            <returns></returns>
+            <returns> Returns true or false based on the success of the operation. </returns>
         </member>
         <member name="M:BankApplication.Account.Debit(System.Decimal)">
             <summary>
-            .
+            Withdraws money from the account.
             </summary>
             <param name="amount"></param>
+            <returns> Returns true or false based on the success of the operation. </returns>
         </member>
         <member name="T:BankApplication.CheckingAccount">
             <summary>
-            .
+            Represents a users checkings account.
             </summary>
         </member>
         <member name="P:BankApplication.CheckingAccount.ChargedFee">
             <summary>
-            .
+            Property for getting and setting the Charged Fee.
             </summary>
         </member>
         <member name="M:BankApplication.CheckingAccount.#ctor">
             <summary>
-            .
+            Default constructor.
             </summary>
         </member>
         <member name="M:BankApplication.CheckingAccount.#ctor(System.Decimal,System.Decimal)">
             <summary>
-            .
+            Constructor that sets the account balance and charged fee.
             </summary>
             <param name="balance"></param>
             <param name="fee"></param>
         </member>
         <member name="M:BankApplication.CheckingAccount.Credit(System.Decimal)">
             <summary>
-            .
+            Deposits money into the account.
             </summary>
             <param name="amount"></param>
-            <returns></returns>
+            <returns> Returns true or false based on the success of the operation. </returns>
         </member>
         <member name="M:BankApplication.CheckingAccount.Debit(System.Decimal)">
             <summary>
-            .
+            Withdraws money from the account.
             </summary>
             <param name="amount"></param>
-            <returns></returns>
+            <returns> Returns true or false based on the success of the operation. </returns>
         </member>
         <member name="T:BankApplication.Program">
             <summary>
-            .
+            This program uses an Account hierachy to implement a banking application.
             </summary>
             <Student>Jonathan Woods</Student>
             <Class>CIS297</Class>
@@ -84,13 +85,13 @@
         </member>
         <member name="M:BankApplication.Program.Main(System.String[])">
             <summary>
-            .
+            The program allows a user to deposit and withdraw from savings and checking accounts.
             </summary>
             <param name="args"></param>
         </member>
         <member name="M:BankApplication.Program.UpdateAccount(BankApplication.Account,System.Int32,System.String)">
             <summary>
-            .
+            Updates the balance of an account after the user withdraws or deposits money.
             </summary>
             <param name="account"></param>
             <param name="accountNumber"></param>
@@ -98,29 +99,31 @@
         </member>
         <member name="T:BankApplication.SavingsAccount">
             <summary>
-            .
+            Represents a users savings account.
             </summary>
         </member>
         <member name="P:BankApplication.SavingsAccount.InterestRate">
             <summary>
-            .
+            Property for getting and setting the Interest Rate.
             </summary>
         </member>
         <member name="M:BankApplication.SavingsAccount.#ctor">
             <summary>
-            .
+            Default constructor.
             </summary>
         </member>
         <member name="M:BankApplication.SavingsAccount.#ctor(System.Decimal,System.Decimal)">
             <summary>
-            .
+            Constructor that sets the account balance and interest rate.
             </summary>
+            <param name="balance"></param>
+            <param name="rate"></param>
         </member>
         <member name="M:BankApplication.SavingsAccount.CalculateInterest">
             <summary>
-            .
+            Calculates the interest on the money in the account.
             </summary>
-            <returns></returns>
+            <returns> Returns the interest earned. </returns>
         </member>
     </members>
 </doc>
