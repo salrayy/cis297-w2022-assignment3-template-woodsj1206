@@ -20,73 +20,48 @@ namespace BankApplication
         /// <param name="args"></param>
         static void Main(string[] args)
         {
-            var accounts = new List<Account>() {new SavingsAccount(1000M, 0.05M), new CheckingAccount(300M, 5M), new SavingsAccount(1250M, 0.02M), new CheckingAccount(1500M, 3M) };
+            // create array of accounts
+            Account[] accounts = new Account[4];
 
-            int accountNumber = 0;
-            string accountType;
+            // initialize array with Accounts
+            accounts[0] = new SavingsAccount(25M, .03M);
+            accounts[1] = new CheckingAccount(80M, 1M);
+            accounts[2] = new SavingsAccount(200M, .015M);
+            accounts[3] = new CheckingAccount(400M, .5M);
 
-            foreach (var currentAccount in accounts)
-            {                
-                accountNumber++;
+            // loop through array, prompting user for debit and credit amounts
+            for (int i = 0; i < accounts.Length; i++)
+            {
+                Console.WriteLine($"Account {i + 1} balance: {accounts[i].Balance:C}");
 
-                if (currentAccount is SavingsAccount)
+                Console.Write($"\nEnter an amount to withdraw from Account {i + 1}: $");
+                decimal withdrawalAmount = decimal.Parse(Console.ReadLine());
+
+                accounts[i].Debit(withdrawalAmount); // attempt to debit
+
+                Console.Write($"\nEnter an amount to deposit into Account {i + 1}: $");
+                decimal depositAmount = decimal.Parse(Console.ReadLine());
+
+                // credit amount to Account
+                accounts[i].Credit(depositAmount);
+
+                // if Account is a SavingsAccount, calculate and add interest
+                if (accounts[i] is SavingsAccount)
                 {
-                    var account = (SavingsAccount)currentAccount;
+                    // downcast
+                    SavingsAccount currentAccount = (SavingsAccount)accounts[i];
 
-                    accountType = "Savings";
-
-                    UpdateAccount(account, accountNumber, accountType);
-
-                    account.Credit(account.CalculateInterest());
-                }
-                else
-                {
-                    var account = (CheckingAccount)currentAccount;
-
-                    accountType = "Checking";
-
-                    UpdateAccount(account, accountNumber, accountType);
+                    decimal interestEarned = currentAccount.CalculateInterest();
+                    Console.WriteLine($"Adding {interestEarned:C} interest to Account {i + 1} (a SavingsAccount)");
+                    currentAccount.Credit(interestEarned);
                 }
 
-                Console.WriteLine($"The updated balance of {accountType} Account #{accountNumber} is: ${currentAccount.Balance}\n");
+                Console.WriteLine($"\nUpdated Account {i + 1} balance: ${accounts[i].Balance:C}\n\n");
             }
 
             Console.WriteLine("Press \"Enter\" to end the program.");
 
             Console.ReadLine();
-        }
-
-        /// <summary>
-        /// Updates the balance of an account after the user withdraws or deposits money.
-        /// </summary>
-        /// <param name="account"></param>
-        /// <param name="accountNumber"></param>
-        /// <param name="accountType"></param>
-        private static void UpdateAccount(Account account, int accountNumber, string accountType = "")
-        {
-            Console.WriteLine($"The current balance of {accountType} Account #{accountNumber} is: ${account.Balance}");
-
-            Console.Write($"Enter the amount of money you would like to withdraw from {accountType} Account #{accountNumber}: $");
-
-            if (decimal.TryParse(Console.ReadLine(), out decimal enteredAmount))
-            {
-                account.Debit(enteredAmount);
-            }
-            else
-            {
-                Console.WriteLine("Invalid amount.");
-            }
-
-            Console.Write($"Enter the amount of money you would like to deposit into {accountType} Account #{accountNumber}: $");
-
-            if (decimal.TryParse(Console.ReadLine(), out enteredAmount))
-            {
-                account.Credit(enteredAmount);
-            }
-            else
-            {
-                Console.WriteLine("Invalid amount.");
-            }
         }
     }
 }

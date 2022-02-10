@@ -9,7 +9,7 @@ namespace BankApplication
     /// <summary>
     /// Represents a users bank account.
     /// </summary>
-    abstract class Account
+    class Account
     {
         private decimal accountBalance;
 

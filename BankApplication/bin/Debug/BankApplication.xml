@@ -89,14 +89,6 @@
             </summary>
             <param name="args"></param>
         </member>
-        <member name="M:BankApplication.Program.UpdateAccount(BankApplication.Account,System.Int32,System.String)">
-            <summary>
-            Updates the balance of an account after the user withdraws or deposits money.
-            </summary>
-            <param name="account"></param>
-            <param name="accountNumber"></param>
-            <param name="accountType"></param>
-        </member>
         <member name="T:BankApplication.SavingsAccount">
             <summary>
             Represents a users savings account.
